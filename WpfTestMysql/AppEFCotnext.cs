@@ -17,10 +17,11 @@ namespace WpfTestMysql
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var conStr = "Server=localhost;Port=3308;Database=pv121test;User Id=root;Password=;";
+            //var conStr = "Server=localhost;Port=3308;Database=pv121test;User Id=root;Password=;";
+            var conStr = "Server=sql8.freemysqlhosting.net;Port=3306;Database=sql8610267;User Id=sql8610267;Password=Gh6tYnkWsS;";
             var serverVersion = 
-                new MariaDbServerVersion(ServerVersion.AutoDetect(conStr));
-                //new MySqlServerVersion(ServerVersion.AutoDetect(conStr));
+                //new MariaDbServerVersion(ServerVersion.AutoDetect(conStr));
+                new MySqlServerVersion(ServerVersion.AutoDetect(conStr));
 
             optionsBuilder
                 .UseMySql(conStr, serverVersion);
