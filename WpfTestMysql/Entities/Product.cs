@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
@@ -10,6 +11,7 @@ namespace WpfTestMysql.Entities
         [Key]
         [Column("id")]
         public int Id { get; set; }
+
         [Required]
         [Column("name")]
         [StringLength(255)]
@@ -27,5 +29,7 @@ namespace WpfTestMysql.Entities
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+
+        public virtual List<ProductImage> ProductImages { get; set; }
     }
 }
